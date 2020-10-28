@@ -412,14 +412,14 @@ func (obj JSONWebEncryption) Decrypt(decryptionKey interface{}) ([]byte, error) 
 		return nil, errors.New("square/go-jose: too many recipients in payload; expecting only one")
 	}
 
-	critical, err := headers.getCritical()
-	if err != nil {
-		return nil, fmt.Errorf("square/go-jose: invalid crit header")
-	}
-
-	if len(critical) > 0 {
-		return nil, fmt.Errorf("square/go-jose: unsupported crit header")
-	}
+	//critical, err := headers.getCritical()
+	//if err != nil {
+	//	return nil, fmt.Errorf("square/go-jose: invalid crit header")
+	//}
+	//
+	//if len(critical) > 0 {
+	//	return nil, fmt.Errorf("square/go-jose: unsupported crit header")
+	//}
 
 	decrypter, err := newDecrypter(decryptionKey)
 	if err != nil {
